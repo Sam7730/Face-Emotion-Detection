@@ -1,0 +1,162 @@
+# 🎭 Face Emotion Detection Project - Full Setup & Troubleshooting Guide
+
+This document explains how to set up, run, and fix common issues in this project.
+
+---
+
+## 📌 1. Clone the Repository
+
+git clone https://github.com/Sam7730/Face-Emotion-Detection.git
+
+cd Face-Emotion-Detection
+
+---
+
+## 📌 2. Create Virtual Environment (Recommended)
+
+python -m venv venv
+
+Activate:
+
+Windows:
+venv\Scripts\activate
+
+---
+
+## 📌 3. Install Dependencies
+
+pip install -r requirements.txt
+
+---
+
+## 📌 4. Run the Project
+
+python EmotionDetection.py
+
+Press Q to exit webcam window.
+
+---
+
+# ⚠️ COMMON ISSUES ENCOUNTERED & FIXES
+
+---
+
+## ❌ Issue 1: TensorFlow version conflict
+
+Error:
+"You have tensorflow 2.21.0 and this requires tf-keras package"
+
+### ✅ Fix:
+Install correct compatibility package:
+
+pip install tf-keras
+
+OR downgrade TensorFlow:
+
+pip install tensorflow==2.15.0
+
+---
+
+## ❌ Issue 2: Python version mismatch (Python 3.14 issue)
+
+Problem:
+DeepFace and TensorFlow are NOT fully compatible with Python 3.14.
+
+### ✅ Fix:
+Use Python 3.10 or 3.11 instead.
+
+Check version:
+
+python --version
+
+---
+
+## ❌ Issue 3: DeepFace import error
+
+Error:
+"from deepface import DeepFace" underlined or failing
+
+### ✅ Fix:
+Reinstall DeepFace:
+
+pip install deepface
+
+Also ensure correct Python interpreter is selected in PyCharm.
+
+---
+
+## ❌ Issue 4: Missing tf_keras module
+
+Error:
+ModuleNotFoundError: No module named 'tf_keras'
+
+### ✅ Fix:
+Install required dependency:
+
+pip install tf-keras
+
+---
+
+## ❌ Issue 5: Git push rejected (fetch first)
+
+Error:
+"Updates were rejected because remote contains work you do not have"
+
+### ✅ Fix:
+Run:
+
+git pull origin main --allow-unrelated-histories
+git push
+
+---
+
+## ❌ Issue 6: Git nested repository error
+
+Error:
+"embedded git repository detected"
+
+### ✅ Fix:
+Remove inner .git folder:
+
+rm -rf Face-Emotion-Detection/.git
+
+OR delete nested folder and re-add clean version.
+
+---
+
+## ❌ Issue 7: requirements.txt not showing on GitHub
+
+Problem:
+File created but not visible online.
+
+### Fix:
+Make sure file is committed:
+
+git add requirements.txt
+git commit -m "add requirements"
+git push
+
+---
+
+# 📌 5. System Workflow
+
+1. Capture webcam video
+2. Detect face using DeepFace
+3. Analyze emotion using pretrained model
+4. Display result in real-time
+
+---
+
+# 📌 6. Requirements
+
+- Python 3.10 or 3.11 (NOT 3.14)
+- OpenCV
+- TensorFlow 2.15
+- DeepFace
+- Webcam
+
+---
+
+# 👨‍💻 Author
+
+Sohaib Khan
